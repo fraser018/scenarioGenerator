@@ -1,0 +1,37 @@
+[
+    {
+        "action": "An Action",
+        "completed": false,
+        "_id": "5eb341726bc784eb3a34d373",
+        "userId": "5eb23119cefc78cb3fe21847",
+        "__v": 0
+    },
+    {
+        "action": "Another Action",
+        "completed": true,
+        "_id": "5eb341f66bc784eb3a34d376",
+        "userId": "5eb341ce6bc784eb3a34d375",
+        "__v": 0
+    },
+    {
+        "action": "do a back flip",
+        "completed": false,
+        "_id": "5eb3425e6bc784eb3a34d377",
+        "userId": "5eb23119cefc78cb3fe21847",
+        "__v": 0
+    },
+    {
+        "action": "test",
+        "completed": true,
+        "_id": "5eb3455927e982ee40b481f5",
+        "userId": "5eb341ce6bc784eb3a34d375",
+        "__v": 0
+    },
+    {
+        "action": "testing",
+        "completed": false,
+        "_id": "5eb3472ab50bc8f7f9608c12",
+        "userId": "5eb341ce6bc784eb3a34d375",
+        "__v": 0
+    }
+]
