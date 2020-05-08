@@ -21,7 +21,7 @@ const getDirections = async (startLoc, destinationLoc) => {
   // console.log(startLoc, destinationLoc)
 
   try {
-    const KEY = 'AIzaSyA9FJeX9zTz1wqrb8ksod3ybrCVY3iar6k'
+    const KEY = ''
     let resp = await fetch(
       `https://maps.googleapis.com/maps/api/directions/json?origin=${startLoc}&destination=${destinationLoc}&key=${KEY}`
     )
