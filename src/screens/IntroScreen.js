@@ -1,8 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 import { Button } from 'react-native-elements'
-import AppContext from '../context/IndustryContext'
-import { Spacer } from '../components/Spacer'
 
 const IntroScreen = ({ navigation }) => {
   // const { state } = useContext(AppContext)

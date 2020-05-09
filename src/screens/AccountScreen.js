@@ -43,35 +43,19 @@ const AccountScreen = () => {
           </View>
         </View>
       </Modal>
-
-      <Text
-        style={{ fontSize: 44, justifyContent: 'center', textAlign: 'center' }}
-      >
-        Account Screen
-      </Text>
       <Spacer>
         <Button
           type='outline'
-          buttonStyle={{
-            color: 'green',
-            margin: 20,
-            borderColor: 'green',
-            borderWidth: 3
-          }}
-          titleStyle={{ color: 'black', fontSize: 23 }}
+          buttonStyle={styles.button}
+          titleStyle={styles.buttonTitle}
           title='Sign Out'
           onPress={signout}
         />
       </Spacer>
       <Button
         type='outline'
-        buttonStyle={{
-          color: 'green',
-          margin: 20,
-          borderColor: 'green',
-          borderWidth: 3
-        }}
-        titleStyle={{ color: 'black', fontSize: 23 }}
+        buttonStyle={styles.button}
+        titleStyle={styles.buttonTitle}
         title='See Previous Scenarios'
         onPress={() => {
           setModalVisible(true)
@@ -132,7 +116,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     fontFamily: 'Roboto'
-  }
+  },
+  button: {
+    color: 'green',
+    margin: 20,
+    borderColor: 'green',
+    borderWidth: 3
+  },
+  buttonTitle: { color: 'black', fontSize: 23 }
 })
 
 export default AccountScreen

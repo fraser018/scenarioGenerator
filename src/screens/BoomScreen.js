@@ -77,8 +77,10 @@ const BoomScreen = ({ navigation }) => {
         <Text style={styles.timerText}>{`${mins}:${secs}`}</Text>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Results')
             toggle()
+            navigation.navigate('Results', {
+              data: { timer: { mins, secs } }
+            })
           }}
         >
           <FontAwesome5 size={80} name={'flag-checkered'} color='green' />

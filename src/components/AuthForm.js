@@ -19,7 +19,7 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
   return (
     <View>
       <Spacer>
-        <Text h3 h3Style={{ fontSize: 35, margin: 10 }}>
+        <Text h3 h3Style={styles.h3}>
           {headerText}
         </Text>
       </Spacer>
@@ -50,13 +50,8 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
       <Spacer>
         <Button
           type='outline'
-          buttonStyle={{
-            color: 'green',
-            margin: 20,
-            borderColor: 'green',
-            borderWidth: 3
-          }}
-          titleStyle={{ color: 'black', fontSize: 23 }}
+          buttonStyle={styles.button}
+          titleStyle={styles.buttonTitle}
           title={submitButtonText}
           onPress={() => onSubmit({ email, password, company })}
         />
@@ -78,7 +73,15 @@ const styles = StyleSheet.create({
     resizeMode: 'center',
     width: null,
     height: 100
-  }
+  },
+  button: {
+    color: 'green',
+    margin: 20,
+    borderColor: 'green',
+    borderWidth: 3
+  },
+  buttonTitle: { color: 'black', fontSize: 23 },
+  h3: { fontSize: 35, margin: 10 }
 })
 
 export default AuthForm

@@ -110,7 +110,9 @@ const ConfirmScreen = ({ navigation }) => {
           }}
           titleStyle={{ color: 'black', fontSize: 23 }}
           title='Arm Scenario'
-          onPress={() => navigation.navigate('Armed')}
+          onPress={() =>
+            navigation.navigate('Armed', { data: { chosenDate: { date } } })
+          }
         />
       </View>
     </View>

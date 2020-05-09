@@ -7,6 +7,10 @@ import Spacer from '../components/Spacer'
 // import { LinearGradient } from 'expo'
 
 const ArmedScreen = ({ navigation }) => {
+  // const data = navigation.state.params.data.chosenDate.date
+  // console.log(navigation.state.params.data.chosenDate.date)
+  const date = new Date(navigation.state.params.data.chosenDate.date).toString()
+
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Scenario has been armed</Text>
@@ -16,9 +20,10 @@ const ArmedScreen = ({ navigation }) => {
         </Text>
       </TouchableOpacity>
       <View>
-        <Text>(click image to skip to scenario screen)</Text>
-        <Text style={styles.daysText}>Tuesday 5th May</Text>
-        <Text style={styles.timeText}>13:30 pm</Text>
+        <Text style={styles.date}>
+          (click image to skip to scenario screen)
+        </Text>
+        <Text style={styles.daysText}>{date}</Text>
       </View>
     </View>
   )
@@ -55,17 +60,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'orange',
-    paddingTop: 0
+    backgroundColor: 'orange'
   },
   icon: {
     color: 'green',
-    paddingTop: 60
+    paddingTop: 40
   },
   timeText: {
     fontSize: 50,
     color: 'black',
-    paddingBottom: 20
+    paddingBottom: 10
   },
   headerText: {
     fontSize: 40,
@@ -77,7 +81,11 @@ const styles = StyleSheet.create({
   daysText: {
     color: 'black',
     fontSize: 25,
-    paddingBottom: 0
+    paddingBottom: 0,
+    textAlign: 'center'
+  },
+  date: {
+    textAlign: 'center'
   }
 })
 

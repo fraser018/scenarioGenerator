@@ -18,6 +18,7 @@ import ArmedScreen from './src/screens/ArmedScreen'
 
 const stackNavigator = createStackNavigator(
   {
+    Boom: BoomScreen,
     ResolveAuth: ResolveAuthScreen,
     Intro: IntroScreen,
     SignIn: SigninScreen,
@@ -25,7 +26,6 @@ const stackNavigator = createStackNavigator(
     Scenarios: ScenariosScreen,
     Confirm: ConfirmScreen,
     Armed: ArmedScreen,
-    Boom: BoomScreen,
     Results: ResultsScreen,
     Account: AccountScreen
   },

@@ -14,13 +14,17 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 const ResultsScreen = ({ navigation }) => {
   const { state, fetchScenarios } = useContext(ScenarioContext)
+  const takenMins = navigation.state.params.data.timer.mins
+  const takenSecs = navigation.state.params.data.timer.secs
+  // console.log(navigation.state.params.data)
 
   return (
     <View>
       <NavigationEvents onWillFocus={fetchScenarios} />
 
       <Text style={styles.header}>
-        Your team completed the following tasks in this time: #Time
+        Your team completed the following tasks in this time: {takenMins}
+        Mins & {takenSecs} Secs
       </Text>
 
       <FlatList

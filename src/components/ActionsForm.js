@@ -16,31 +16,31 @@ const ActionsForm = ({
       <Text h3>{headerText}</Text>
       <View style={styles.form}>
         <Input
-          containerStyle={{ height: 65 }}
+          containerStyle={styles.input}
           label='Action'
           value={item}
           onChangeText={newItem => setItem(newItem)}
         />
         <Input
-          containerStyle={{ height: 65 }}
+          containerStyle={styles.input}
           label='Action'
           value={item}
           onChangeText={newItem => setItem(newItem)}
         />
         <Input
-          containerStyle={{ height: 65 }}
+          containerStyle={styles.input}
           label='Action'
           value={item}
           onChangeText={newItem => setItem(newItem)}
         />
         <Input
-          containerStyle={{ height: 65 }}
+          containerStyle={styles.input}
           label='Action'
           value={item}
           onChangeText={newItem => setItem(newItem)}
         />
         <Input
-          containerStyle={{ height: 65 }}
+          containerStyle={styles.input}
           label='Action'
           value={item}
           onChangeText={newItem => setItem(newItem)}
@@ -48,13 +48,8 @@ const ActionsForm = ({
       </View>
       <Button
         type='outline'
-        buttonStyle={{
-          color: 'green',
-          margin: 20,
-          borderColor: 'green',
-          borderWidth: 3
-        }}
-        titleStyle={{ color: 'black', fontSize: 23 }}
+        buttonStyle={styles.button}
+        titleStyle={styles.buttonTitle}
         title={submitButtonText}
         onPress={onPress}
       />
@@ -73,7 +68,15 @@ const styles = StyleSheet.create({
     borderWidth: 5,
     borderRadius: 8,
     borderColor: 'green'
-  }
+  },
+  button: {
+    color: 'green',
+    margin: 20,
+    borderColor: 'green',
+    borderWidth: 3
+  },
+  buttonTitle: { color: 'black', fontSize: 23 },
+  input: { height: 65 }
 })
 
 export default ActionsForm
