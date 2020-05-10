@@ -1,5 +1,6 @@
 import createDataContext from './createDataContext'
 import axios from '../api/axios'
+import { navigate } from '../navigationRef'
 
 const scenarioReducer = (state, action) => {
   switch (action.type) {
@@ -19,6 +20,7 @@ const createScenario = dispatch => {
         action: item
       })
       console.log(response.data)
+      navigate('Confirm')
     } catch (err) {
       console.log(err)
     }

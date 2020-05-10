@@ -6,8 +6,8 @@ import Spacer from '../components/Spacer'
 import ActionsForm from '../components/ActionsForm'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
-const ScenarioScreen = () => {
-  const { state, creatScenario } = useContext(Context)
+const ScenarioScreen = ({ navigation }) => {
+  const { state, createScenario } = useContext(Context)
   console.log(state)
 
   return (
@@ -16,7 +16,7 @@ const ScenarioScreen = () => {
       <ActionsForm
         headerText='Enter a action to carry out during the scenario '
         submitButtonText='Submit'
-        onSubmit={creatScenario}
+        onSubmit={createScenario}
       />
     </View>
   )

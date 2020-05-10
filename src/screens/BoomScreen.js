@@ -10,6 +10,7 @@ import { CheckBox } from 'react-native-elements'
 import { Context as ScenarioContext } from '../context/ScenarioConext'
 import { NavigationEvents } from 'react-navigation'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import { ScrollView } from 'react-native-gesture-handler'
 
 const formatNumber = number => `0${number}`.slice(-2)
 
@@ -51,28 +52,37 @@ const BoomScreen = ({ navigation }) => {
       <Text style={styles.header}>
         Tick off the actions below as they are completed.
       </Text>
-
-      <FlatList
-        style={styles.flatList}
-        data={state}
-        renderItem={({ item }) => (
-          <View style={{ justifyContent: 'center', marginBottom: 10 }}>
-            <TouchableOpacity>
-              <CheckBox
-                title={item.action}
-                checkedIcon={
-                  <FontAwesome5 size={40} name={'check-square'} color='green' />
-                }
-                uncheckedIcon={
-                  <FontAwesome5 size={40} name={'check-square'} color='white' />
-                }
-                checked={item.completed}
-                onPress={'checked => setChecked(checked)'}
-              />
-            </TouchableOpacity>
-          </View>
-        )}
-      />
+      <ScrollView>
+        <FlatList
+          style={styles.flatList}
+          data={state}
+          renderItem={({ item }) => (
+            <View style={{ justifyContent: 'center', marginBottom: 10 }}>
+              <TouchableOpacity>
+                <CheckBox
+                  title={item.action}
+                  checkedIcon={
+                    <FontAwesome5
+                      size={40}
+                      name={'check-square'}
+                      color='green'
+                    />
+                  }
+                  uncheckedIcon={
+                    <FontAwesome5
+                      size={40}
+                      name={'check-square'}
+                      color='white'
+                    />
+                  }
+                  checked={item.completed}
+                  onPress={'checked => setChecked(checked)'}
+                />
+              </TouchableOpacity>
+            </View>
+          )}
+        />
+      </ScrollView>
       <View style={styles.bottom}>
         <Text style={styles.timerText}>{`${mins}:${secs}`}</Text>
         <TouchableOpacity
