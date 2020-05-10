@@ -23,7 +23,7 @@ const ResultsScreen = ({ navigation }) => {
       <NavigationEvents onWillFocus={fetchScenarios} />
 
       <Text style={styles.header}>
-        Your team completed the following tasks in this time: {takenMins}
+        Your team completed the following tasks in: {takenMins}
         Mins & {takenSecs} Secs
       </Text>
 

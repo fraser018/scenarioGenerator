@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Text, Button, Input } from 'react-native-elements'
-import Spacer from '../components/Spacer'
 
 const ActionsForm = ({
   headerText,
   errorMessage,
-  onPress,
+  onSubmit,
   submitButtonText
 }) => {
   const [item, setItem] = useState('')
@@ -21,37 +20,13 @@ const ActionsForm = ({
           value={item}
           onChangeText={newItem => setItem(newItem)}
         />
-        <Input
-          containerStyle={styles.input}
-          label='Action'
-          value={item}
-          onChangeText={newItem => setItem(newItem)}
-        />
-        <Input
-          containerStyle={styles.input}
-          label='Action'
-          value={item}
-          onChangeText={newItem => setItem(newItem)}
-        />
-        <Input
-          containerStyle={styles.input}
-          label='Action'
-          value={item}
-          onChangeText={newItem => setItem(newItem)}
-        />
-        <Input
-          containerStyle={styles.input}
-          label='Action'
-          value={item}
-          onChangeText={newItem => setItem(newItem)}
-        />
       </View>
       <Button
         type='outline'
         buttonStyle={styles.button}
         titleStyle={styles.buttonTitle}
         title={submitButtonText}
-        onPress={onPress}
+        onPress={() => onSubmit({ item })}
       />
     </View>
   )

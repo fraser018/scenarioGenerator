@@ -12,10 +12,29 @@ const scenarioReducer = (state, action) => {
   }
 }
 
-const addActionToScenario = dispatch => ({ item }) => {
-  dispatch({ type: 'add_action', payload: { item } })
+const createScenario = dispatch => {
+  return async ({ item }) => {
+    try {
+      const response = await axios.post('/actions', {
+        action: item
+      })
+      console.log(response.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
 }
-// console.log(state)
+
+const updateCompleted = dispatch => {
+  return async ({ completed }) => {
+    try {
+      const response = await axios.put('/actions', { completed })
+      console.log(response.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+}
 
 const fetchScenarios = dispatch => async () => {
   const response = await axios.get('/actions')
@@ -23,8 +42,8 @@ const fetchScenarios = dispatch => async () => {
   // console.log('fetch - ', response.data)
 }
 
-const createScenario = dispatch => async (name, actions) => {
-  await axios.post('/actions', { name, actions })
+const addActionToScenario = dispatch => ({ item }) => {
+  console.log(item)
 }
 
 export const { Provider, Context } = createDataContext(
@@ -34,5 +53,5 @@ export const { Provider, Context } = createDataContext(
     createScenario,
     addActionToScenario
   },
-  []
+  { item: '' }
 )
